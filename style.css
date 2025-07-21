@@ -21,6 +21,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 /* Geometric background shapes */
@@ -35,6 +36,19 @@ body {
         radial-gradient(circle at 20% 80%, rgba(34, 197, 94, 0.3) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(74, 222, 128, 0.2) 0%, transparent 50%),
         radial-gradient(circle at 40% 40%, rgba(22, 163, 74, 0.1) 0%, transparent 50%);
+    z-index: 1;
+}
+
+/* Triangular shape in bottom left corner */
+.container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 600px;
+    height: 400px;
+    background: linear-gradient(45deg, #0f172a 0%, #1e293b 30%, transparent 70%);
+    clip-path: polygon(0% 100%, 100% 100%, 0% 0%);
     z-index: 1;
 }
 
